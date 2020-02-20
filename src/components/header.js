@@ -17,7 +17,7 @@ export default ({ page }) => {
       <A to="/" active={ page === 'Home' ? 'true' : 'false' } >Home</A>
       <A to="/opening" active={ page === 'Opening' ? 'true' : 'false'  } >Opening</A>
       <A to="/closing" active={ page === 'Closing' ? 'true' : 'false'  } >Closing</A>
-      <A to="/maintenance" active={ page === 'Maintenance' ? 'true' : 'false'  } >Maintanace</A>
+      <A to="/maintenance" active={ page === 'Maintenance' ? 'true' : 'false'  } >Maintenance</A>
       <A to="/projects" active={ page === 'Project Ideas' ? 'true' : 'false'  } >Projects</A>
       <A to="/cleaning" active={ page === 'Cleaning' ? 'true' : 'false'  } >Cleaning List</A>
       <P to="/form" active={'false'} >Add tasks</P>
