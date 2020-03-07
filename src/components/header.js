@@ -14,13 +14,15 @@ export default ({ page }) => {
   <Header>
     <Image onClick={toggleMenu} src="https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-256.png" alt="mobile menu toggle" />
     <Nav style={{ display: show ? 'flex' : 'none' }}>
-      <A to="/" active={ page === 'Home' ? 'true' : 'false' } >Home</A>
-      <A to="/opening" active={ page === 'Opening' ? 'true' : 'false'  } >Opening</A>
-      <A to="/closing" active={ page === 'Closing' ? 'true' : 'false'  } >Closing</A>
-      <A to="/maintenance" active={ page === 'Maintenance' ? 'true' : 'false'  } >Maintenance</A>
-      <A to="/projects" active={ page === 'Project Ideas' ? 'true' : 'false'  } >Projects</A>
-      <A to="/cleaning" active={ page === 'Cleaning' ? 'true' : 'false'  } >Cleaning List</A>
-      <P to="/form" active={'false'} >Add tasks</P>
+      <Menu>
+        <A to="/" active={ page === 'Home' ? 'true' : 'false' } >Home</A>
+        <A to="/opening" active={ page === 'Opening' ? 'true' : 'false'  } >Opening</A>
+        <A to="/closing" active={ page === 'Closing' ? 'true' : 'false'  } >Closing</A>
+        <A to="/maintenance" active={ page === 'Maintenance' ? 'true' : 'false'  } >Maintenance</A>
+        <A to="/projects" active={ page === 'Project Ideas' ? 'true' : 'false'  } >Projects</A>
+        <A to="/cleaning" active={ page === 'Cleaning' ? 'true' : 'false'  } >Cleaning List</A>
+      </Menu>
+      <P to="/form" active={'false'} >+ Add tasks</P>
     </Nav>
   </Header>
 )}
@@ -31,6 +33,10 @@ const A = styled(Link)`
   font-size:20px;
   padding: 1rem;
   border-bottom: ${ props => props.active === 'true' ? '1px solid white' : ''};
+
+  :hover {
+    color: lightgrey;
+  }
 `
 
 const Header = styled.header`
@@ -58,10 +64,27 @@ const Nav = styled.nav`
   }
 `
 
+const Menu = styled.div`
+  margin: auto 0;
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+`
+
 const P = styled(A)`
   background-color:white;
   border-radius: 50px;
   color:black;
+  text-transform: uppercase;
+  font-weight: 700;
+
+  :hover {
+    color: black;
+    background-color: lightgrey;
+  }
 
   @media (max-width: 768px) {
     margin-top: 20px;

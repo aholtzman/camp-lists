@@ -19,7 +19,13 @@ export default () => {
     <div>
       <div style={{textAlign: 'right', maxWidth: '600px', margin:'2rem auto'}}>
         <button onClick={logout} style={{padding: '1rem', border: '1px solid white', fontSize: '16px', background: 'darkred', color: 'white' }}>log out</button>
-        <Link style={{padding: '1rem', background: 'white', margin:'1rem', textDecoration:'none', color:'black'}} to="/add-message">add message</Link>
+        <a
+          style={{padding: '1rem', background: 'white', margin:'1rem', textDecoration:'none', color:'black'}}
+          href='https://docs.google.com/spreadsheets/d/1YQxX3FEtjNo5UtPKF2FUT9BiYrpOuV8kHTcY2ZhLMe4/edit?usp=sharing'
+          target='_blank'
+          rel="noopener noreferrer"
+        >edit messages</a>
+        <Link style={{padding: '1rem', background: 'white', margin:'1rem 0', textDecoration:'none', color:'black'}} to="/add-message">add message</Link>
       </div>
       <List>
       {
@@ -27,7 +33,7 @@ export default () => {
           return  <Card key={index}>
                     <p>{message['Post']}</p>
                     <hr />
-                    <p>Submitted by {message['Name']} on {message['Timestamp']}</p>
+                    <p style={{fontSize: `12px`, marginLeft: '1rem'}}>Submitted by {message['Name']} on {message['Timestamp']}</p>
                   </Card>
                 }) : ''
       }
