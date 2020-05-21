@@ -16,6 +16,7 @@ export default ({ page }) => {
     <Nav style={{ display: show ? 'flex' : 'none' }}>
       <Menu>
         <A to="/" active={ page === 'Home' ? 'true' : 'false' } >Home</A>
+        <A to="/stay" active={ page === 'Stay' ? 'true' : 'false'  } >Stay</A>
         <A to="/opening" active={ page === 'Opening' ? 'true' : 'false'  } >Opening</A>
         <A to="/closing" active={ page === 'Closing' ? 'true' : 'false'  } >Closing</A>
         <A to="/maintenance" active={ page === 'Maintenance' ? 'true' : 'false'  } >Maintenance</A>

@@ -9,6 +9,8 @@ import Cleaning from './pages/cleaning'
 import Projects from './pages/projects'
 import Closing from './pages/closing'
 import MessageForm from './pages/add-message'
+import StayForm from './pages/stay-form'
+import Stay from './pages/stay'
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
         <PrivateRoute path="/closing" component={Closing} />
         <PrivateRoute path="/projects" component={Projects} />
         <PrivateRoute path="/add-message" component={MessageForm} />
+        <PrivateRoute path="/stay-form" component={StayForm} />
+        <PrivateRoute path="/stay" component={Stay} />
       </Switch>
     </Router>
   );
