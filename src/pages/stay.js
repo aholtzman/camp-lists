@@ -17,7 +17,6 @@ export default () => {
 
 
   const sortedDates = data && data.sort((a, b) => b['Departure'].localeCompare(a['Departure']))
-  console.log({sortedDates})
 
   const now = new Date()
 
@@ -30,8 +29,6 @@ export default () => {
     const date = new Date(stay['Departure']);
     return (date < now);
   })
-
-  console.log({past})
 
   return (
     <Layout page='Stay' >
@@ -77,11 +74,11 @@ export default () => {
           return (
             <div key={index} style={{padding: '1rem'}}>
               <Wrap>
-                <p style={{flex: 3, textAlign: "left"}}>{stay["Name"]}</p>
+                <p style={{flex: 3, textAlign: "left"}}><strong>{stay["Name"]}</strong></p>
                 <p>{stay["Arrival"]}</p>
                 <p>{stay["Departure"]}</p>
               </Wrap>
-              {stay["Details (optional)"] && <p>Details: {stay["Details (optional)"]}</p>}
+              {stay["Details (optional)"] && <p style={{margin: 0, marginTop: 10, fontSize: 14}}>Details: {stay["Details (optional)"]}</p>}
             </div>
         )
         })
@@ -119,8 +116,16 @@ const List = styled.div`
 
 const Blocks = styled.div`
   div:nth-child(odd) {
-    background-color: #ededed;
+    color: rgba(0,0,20,.9);
+    border: 1px solid rgba(0,0,20,.9);
     border-radius: 10px;
+  }
+  div:nth-child(even) {
+    background-color: rgba(0,0,20,.9);
+    border-radius: 10px;
+    color: white;
+    margin: 5px 0;
+    border: 1px solid rgba(0,0,20,.9);
   }
 `
 
