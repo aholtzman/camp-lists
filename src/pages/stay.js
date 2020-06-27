@@ -15,8 +15,12 @@ export default () => {
     })
   }, [])
 
+  const sortedDates = data && data.sort((a,b) => {
+    const first = new Date(a["Arrival"])
+    const second = new Date(b['Arrival'])
 
-  const sortedDates = data && data.sort((a, b) => a['Departure'].localeCompare(b['Departure']))
+    return first - second
+  })
 
   const now = new Date()
 
